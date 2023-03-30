@@ -1,9 +1,9 @@
 import NavBar from "../components/Navbar";
 
-function Property(){
+function Flights(){
     return(
         <NavBar />
     )
 }
 
-export default Property;
+export default Flights;
