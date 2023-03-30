@@ -4,6 +4,7 @@ import { Box, Text, Button } from "@chakra-ui/react";
 
 function Header() {
   return (
+    // to add condition based on whether logged in
     <>
       <Box bg='#003b95' w='100%' color='white'>
         <Box margin={"auto"} display={"Flex"} padding="20px 200px" justifyContent={"space-between"} height="80px">

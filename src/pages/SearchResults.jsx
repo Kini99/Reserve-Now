@@ -2,27 +2,115 @@ import NavBar from "../components/Navbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Search from "../components/Search";
-import { Box, Text, Heading, Button } from "@chakra-ui/react";
+import {
+    Box, Text, Heading, Button, Radio, RadioGroup, Stack, Slider,
+    SliderTrack,
+    SliderFilledTrack,
+    SliderThumb,
+    SliderMark, CheckboxGroup, Checkbox, Tabs, TabList, TabPanels, Tab, TabPanel
+} from "@chakra-ui/react";
+import FlightList from "../components/FlightList";
 
 
 
-function SearchResults(){
-    return(
+function SearchResults() {
+    return (
         <>
-        <Header/>
-        <NavBar />
-        <Box padding="20px 200px" ><Search/></Box>
+            <Header />
+            <NavBar />
+            <Box padding="20px 200px" backgroundColor="#f5f5f5"><Search /></Box>
 
-<div style={{display:"flex", padding:"20px 200px"}}> 
-<div>
-{/* filter box */}
-</div>
-<div>
-{/* result box */}
-</div>
-</div>
+            <div style={{ display: "flex", padding: "20px 200px" }}>
+                <div style={{ textAlign: "left" }} >
+                    {/* filter box */}
+                    <div style={{ margin: "10px 0" }}><Text fontWeight="bold">
+                        Filters
+                    </Text>
+                        <Text>Showing 146 results</Text></div>
+                    <div style={{ margin: "30px 0" }}>
+                        <Text fontWeight="bold">Stops</Text>
+                        <RadioGroup defaultValue="any">
+                            <Stack direction='column'>
+                                <Radio value='any'>Any</Radio>
+                                <Radio value='direct'>Direct Only</Radio>
+                                <Radio value='stop'>1 Stop Max</Radio>
+                            </Stack>
+                        </RadioGroup>
+                    </div>
+                    <div style={{ margin: "30px 0" }}><Text fontWeight="bold">
+                        Duration
+                    </Text>
+                        <Text>Maximum Travel Time</Text>
+                        <Slider aria-label='slider-ex-1' defaultValue="39" min={0} max={39}>
+                            <SliderTrack>
+                                <SliderFilledTrack />
+                            </SliderTrack>
+                            <SliderThumb />
+                        </Slider>
+                    </div>
+                    <div style={{ margin: "30px 0" }}><Text fontWeight="bold">
+                        Flight Times
+                    </Text>
+                        <Text style={{ marginTop: "10px" }}>Departs from <span></span> </Text>
+                        <CheckboxGroup>
+                            <Stack spacing={[1, 1]} direction={['column', 'column']}>
+                                <Checkbox value='early'>00.00 - 05.59</Checkbox>
+                                <Checkbox value='morning'>06.00 - 11.59</Checkbox>
+                                <Checkbox value='evening'>12.00 - 17.59</Checkbox>
+                                <Checkbox value='night'>18.00 - 23.59</Checkbox>
+                            </Stack>
+                        </CheckboxGroup>
+                        <Text style={{ marginTop: "20px" }}>Arrives at <span></span> </Text>
+                        <CheckboxGroup>
+                            <Stack spacing={[1, 1]} direction={['column', 'column']}>
+                                <Checkbox value='early'>00.00 - 05.59</Checkbox>
+                                <Checkbox value='morning'>06.00 - 11.59</Checkbox>
+                                <Checkbox value='evening'>12.00 - 17.59</Checkbox>
+                                <Checkbox value='night'>18.00 - 23.59</Checkbox>
+                            </Stack>
+                        </CheckboxGroup>
+                    </div>
+                    <div style={{ margin: "10px 0" }}><Text fontWeight="bold">
+                        Airlines
+                    </Text>
+                        <CheckboxGroup defaultValue={['asia', 'air', 'aliance', 'goFirst', 'indiGo', 'vistara']}>
+                            <Stack spacing={[1, 1]} direction={['column', 'column']}>
+                                <Checkbox value='asia'>Air Asia India</Checkbox>
+                                <Checkbox value='air'>Air India</Checkbox>
+                                <Checkbox value='aliance'>Aliance Air</Checkbox>
+                                <Checkbox value='goFirst'>Go First</Checkbox>
+                                <Checkbox value='indiGo'>IndiGo</Checkbox>
+                                <Checkbox value='vistara'>Vistara</Checkbox>
+                            </Stack>
+                        </CheckboxGroup>
+                    </div>
+                </div>
 
-        <Footer />
+                <div style={{ width: "80%", marginLeft: "100px" }}>
+                    {/* result box */}
+                    <Tabs>
+                        <TabList style={{ display: "flex", gap: "30%", justifyContent: "center" }}>
+                            <Tab>Best</Tab>
+                            <Tab>Cheapest</Tab>
+                            <Tab>Fastest</Tab>
+                        </TabList>
+
+                        <TabPanels>
+                            <TabPanel>
+                                <FlightList />
+                            </TabPanel>
+                            <TabPanel>
+                                <FlightList />
+                            </TabPanel>
+                            <TabPanel>
+                                <FlightList />
+                            </TabPanel>
+                        </TabPanels>
+                    </Tabs>
+                </div>
+            </div>
+
+            <Footer />
         </>
     )
 }
