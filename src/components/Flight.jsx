@@ -6,21 +6,22 @@ import { Box, Text, Heading, Button, Modal,
     ModalBody,
     ModalCloseButton,useDisclosure } from "@chakra-ui/react";
 
-function Flight() {
+function Flight({...flight}) {
 
-    const flight = {
-        "departureTime": "22:35",
-        "from": "BOM",
-        "departureDate": "3 Apr",
-        "totalTime": "1h 10m",
-        "type": "Direct",
-        "arrivalTime": "23:45",
-        "to": "GOI",
-        "arrivalDate": "3 Apr",
-        "airline": "Air Asia India",
-        "amenities": "personal item, checked bag",
-        "price": "INR2,355.62"
-    }
+
+    // const flight = {
+    //     "departureTime": "22:35",
+    //     "from": "BOM",
+    //     "departureDate": "3 Apr",
+    //     "totalTime": "1h 10m",
+    //     "type": "Direct",
+    //     "arrivalTime": "23:45",
+    //     "to": "GOI",
+    //     "arrivalDate": "3 Apr",
+    //     "airline": "Air Asia India",
+    //     "amenities": "personal item, checked bag",
+    //     "price": "INR2,355.62"
+    // }
 
     return (
         <>
@@ -28,26 +29,26 @@ function Flight() {
                 <Box display='flex' justifyContent="space-between" width="60%" borderRight="2px solid #ededed" paddingRight="20px">
                     <div>
                         <img src="" alt="icon" />
-                        <Text>Airline</Text>
+                        <Text>{flight.airline}</Text>
                     </div>
                     <div>
-                        <Text fontWeight="bold">Departure Time</Text>
-                        <Text>Airport . Date</Text>
+                        <Text fontWeight="bold">{flight.departureTime}</Text>
+                        <Text>{flight.from} . {flight.departureDate}</Text>
                     </div>
                     <div>
-                        <Text>Duration</Text>
+                        <Text>{flight.totalTime}</Text>
                         <hr></hr>
-                        <Text>Direct</Text>
+                        <Text>{flight.type}</Text>
                     </div>
                     <div>
-                        <Text fontWeight="bold">Arrival Time</Text>
-                        <Text>Airport . Date</Text>
+                        <Text fontWeight="bold">{flight.arrivalTime}</Text>
+                        <Text>{flight.to} . {flight.arrivalDate}</Text>
                     </div>
                 </Box>
                 <Box textAlign="right" paddingLeft="20px">
                     <img src="" alt="icon" />
-                    <Text>Included: personal item, checked bag</Text>
-                    <Heading as="h3" size="md" marginTop="15px">INR</Heading>
+                    <Text>Included: {flight.amenities}</Text>
+                    <Heading as="h3" size="md" marginTop="15px">INR {flight.price}/-</Heading>
                     <Text>Total price for all travellers</Text>
                     <Button colorScheme='#003b95' color='blue' variant='outline' fontWeight="bold" fontSize="md" marginTop="15px" _hover={{ bg: "#003b95", color: 'white', variant: 'ghost', fontWeight: "bold" }}>Book Flight</Button>
                 </Box>

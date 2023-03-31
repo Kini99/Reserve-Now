@@ -1,7 +1,7 @@
-import NavBar from "../components/Navbar";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Search from "../components/Search";
+import NavBar from "./Navbar";
+import Header from "./Header";
+import Footer from "./Footer";
+import Search from "./Search";
 import {
     Box, Text, Heading, Button, Radio, RadioGroup, Stack, Slider,
     SliderTrack,
@@ -9,18 +9,79 @@ import {
     SliderThumb,
     SliderMark, CheckboxGroup, Checkbox, Tabs, TabList, TabPanels, Tab, TabPanel
 } from "@chakra-ui/react";
-import FlightList from "../components/FlightList";
+import FlightList from "./FlightList";
+import { useLocation } from 'react-router-dom';
+import { useState } from "react";
+import { useEffect } from "react";
 
 
 
-function SearchResults() {
+function SearchResults({ flightlist, searchData }) {
+
+    const [filteredlist, setFilteredlist] = useState([]);
+    const [cheapestlist, setCheapestlist] = useState([]);
+    const [fastestlist, setFastestlist] = useState([]);
+
+
+  let trailFrom = "";
+  if (searchData.from == "Delhi") {
+    trailFrom = "DEL";
+  } else if (searchData.from == "Goa") {
+    trailFrom = "GOI";
+  }
+
+  let trailTo = "";
+  if (searchData.to == "Delhi") {
+    trailTo = "DEL";
+  } else if (searchData.to == "Goa") {
+    trailTo = "GOI";
+  }
+
+  console.log("Flight list before UseEffect");
+  console.log(flightlist);
+
+  useEffect(() => {
+    if (flightlist.length === 0) {
+      console.log("flightlist is empty");
+      return;
+    }
+    
+    const filteredData = flightlist.filter(
+      (flight) => ((flight.from == trailFrom) && (flight.to == trailTo))
+    );
+    
+    console.log("Filtered Data");
+    console.log(filteredData);
+    
+    setFilteredlist(filteredData)
+
+    console.log(filteredlist[0].price)
+    const cheapestData=filteredlist.sort((a,b)=>Number(a.price)-Number(b.price))
+    console.log("cheapestData")
+    console.log(cheapestData)
+setCheapestlist(cheapestData) 
+
+const fastestData=filteredlist.sort((a,b)=>a.totalTime-b.totalTime)
+console.log("fastestData")
+    console.log(fastestData)
+setFastestlist(fastestData)
+
+  }, [flightlist, trailFrom, trailTo]);
+
+  console.log("filtered");
+  console.log(filteredlist);
+  console.log("cheapest list");
+  console.log(cheapestlist);
+
+
+
     return (
         <>
-            <Header />
-            <NavBar />
-            <Box padding="20px 200px" backgroundColor="#f5f5f5"><Search /></Box>
+            {/* <Header />
+            <NavBar /> */}
+            {/* <Box padding="20px 200px" backgroundColor="#f5f5f5"><Search /></Box> */}
 
-            <div style={{ display: "flex", padding: "20px 200px" }}>
+            <div style={{ display: "flex" }}>
                 <div style={{ textAlign: "left" }} >
                     {/* filter box */}
                     <div style={{ margin: "10px 0" }}><Text fontWeight="bold">
@@ -97,20 +158,19 @@ function SearchResults() {
 
                         <TabPanels>
                             <TabPanel>
-                                <FlightList />
+                                <FlightList filteredlist={filteredlist}/>
                             </TabPanel>
                             <TabPanel>
-                                <FlightList />
+                                <FlightList filteredlist={cheapestlist}/>
                             </TabPanel>
                             <TabPanel>
-                                <FlightList />
+                                <FlightList filteredlist={fastestlist}/>
                             </TabPanel>
                         </TabPanels>
                     </Tabs>
                 </div>
             </div>
 
-            <Footer />
         </>
     )
 }

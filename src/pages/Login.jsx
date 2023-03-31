@@ -1,7 +1,7 @@
 import { BsQuestionCircle } from 'react-icons/bs';
 import logo from "../images/RESERVE NOW CROPPED.png";
 import { Box, Text, Heading, Input } from "@chakra-ui/react";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from '../contexts/AuthContext';
 import login from "../images/login.png";
@@ -11,12 +11,19 @@ function Login() {
   // const {loginUser,logoutUser,loading,err}=useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [usersList, setUsersList] =useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(email, password)
     //   loginUser(email,password)
   }
+
+useEffect(()=>{
+  
+},[]);
+
+
   return (
     <>
       <Box bg='#003b95' w='100%' color='white'>
