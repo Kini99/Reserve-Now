@@ -8,6 +8,7 @@
     ],
     "flights":[
         {
+         "id": 1,
          "departureTime": "22:35",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -18,9 +19,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR2,355.62"
+         "price": "2,355.62"
         },
         {
+         "id": 2,
          "departureTime": "05:05",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -31,9 +33,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Go First",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR2,541.22"
+         "price": "2,541.22"
         },
         {
+         "id": 3,
          "departureTime": "04:55",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -44,9 +47,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR2,411.91"
+         "price": "2,411.91"
         },
         {
+         "id": 4,
          "departureTime": "22:10",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -57,9 +61,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR2,411.91"
+         "price": "2,411.91"
         },
         {
+         "id": 5,
          "departureTime": "03:55",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -70,9 +75,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR2,355.62"
+         "price": "2,355.62"
         },
         {
+         "id": 6,
          "departureTime": "16:45",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -83,9 +89,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Go First",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR2,541.22"
+         "price": "2,541.22"
         },
         {
+         "id": 7,
          "departureTime": "17:15",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -96,9 +103,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR2,791.55"
+         "price": "2,791.55"
         },
         {
+         "id": 8,
          "departureTime": "22:10",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -109,9 +117,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Go First",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR2,541.22"
+         "price": "2,541.22"
         },
         {
+         "id": 9,
          "departureTime": "14:05",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -122,9 +131,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR2,667.40"
+         "price": "2,667.40"
         },
         {
+         "id": 10,
          "departureTime": "15:20",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -135,9 +145,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Go First",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR2,920.83"
+         "price": "2,920.83"
         },
         {
+         "id": 11,
          "departureTime": "17:50",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -148,9 +159,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR3,520.11"
+         "price": "3,520.11"
         },
         {
+         "id": 12,
          "departureTime": "11:35",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -161,9 +173,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR4,438.54"
+         "price": "4,438.54"
         },
         {
+         "id": 13,
          "departureTime": "05:00",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -174,9 +187,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air India",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR5,366.82"
+         "price": "5,366.82"
         },
         {
+         "id": 14,
          "departureTime": "21:00",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -187,9 +201,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air India",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR5,366.82"
+         "price": "5,366.82"
         },
         {
+         "id": 15,
          "departureTime": "20:50",
          "from": "BOM",
          "departureDate": "3 Apr",
@@ -200,9 +215,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Vistara",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR5,806.35"
+         "price": "5,806.35"
         },
         {
+         "id": 16,
          "departureTime": "18:55",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -213,9 +229,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR6,156.79"
+         "price": "6,156.79"
         },
         {
+         "id": 17,
          "departureTime": "16:30",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -226,9 +243,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR5,603.52"
+         "price": "5,603.52"
         },
         {
+         "id": 18,
          "departureTime": "06:45",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -239,9 +257,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR6,156.79"
+         "price": "6,156.79"
         },
         {
+         "id": 19,
          "departureTime": "00:15",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -252,9 +271,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR6,189.59"
+         "price": "6,189.59"
         },
         {
+         "id": 20,
          "departureTime": "05:40",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -265,9 +285,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR6,178.24"
+         "price": "6,178.24"
         },
         {
+         "id": 21,
          "departureTime": "22:55",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -278,9 +299,10 @@
          "arrivalDate": "4 Apr",
          "airline": "Vistara",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR6,115.25"
+         "price": "6,115.25"
         },
         {
+         "id": 22,
          "departureTime": "00:10",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -291,9 +313,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR7,264.79"
+         "price": "7,264.79"
         },
         {
+         "id": 23,
          "departureTime": "19:25",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -304,9 +327,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR7,007.67"
+         "price": "7,007.67"
         },
         {
+         "id": 24,
          "departureTime": "13:20",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -317,9 +341,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Vistara",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR7,370.00"
+         "price": "7,370.00"
         },
         {
+         "id": 25,
          "departureTime": "18:25",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -330,9 +355,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Go First",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR6,764.86"
+         "price": "6,764.86"
         },
         {
+         "id": 26,
          "departureTime": "06:50",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -343,9 +369,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air India",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR6,801.18"
+         "price": "6,801.18"
         },
         {
+         "id": 27,
          "departureTime": "06:40",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -356,9 +383,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Go First",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR7,517.94"
+         "price": "7,517.94"
         },
         {
+         "id": 28,
          "departureTime": "17:25",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -369,9 +397,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Alliance Air",
          "amenities": "personal item, cabin bag",
-         "price": "INR6,899.48"
+         "price": "6,899.48"
         },
         {
+         "id": 29,
          "departureTime": "00:05",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -382,9 +411,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Go First",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR7,529.28"
+         "price": "7,529.28"
         },
         {
+         "id": 30,
          "departureTime": "15:25",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -395,9 +425,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air India",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR7,647.41"
+         "price": "7,647.41"
         },
         {
+         "id": 31,
          "departureTime": "15:25",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -408,9 +439,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR7,998.21"
+         "price": "7,998.21"
         },
         {
+         "id": 32,
          "departureTime": "19:15",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -421,9 +453,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR7,998.21"
+         "price": "7,998.21"
         },
         {
+         "id": 33,
          "departureTime": "22:05",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -434,9 +467,10 @@
          "arrivalDate": "4 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR7,998.21"
+         "price": "7,998.21"
         },
         {
+         "id": 34,
          "departureTime": "20:55",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -447,9 +481,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR8,773.20"
+         "price": "8,773.20"
         },
         {
+         "id": 35,
          "departureTime": "21:55",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -460,9 +495,10 @@
          "arrivalDate": "4 Apr",
          "airline": "Vistara",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR8,291.05"
+         "price": "8,291.05"
         },
         {
+         "id": 36,
          "departureTime": "13:05",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -473,9 +509,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR8,773.20"
+         "price": "8,773.20"
         },
         {
+         "id": 37,
          "departureTime": "13:55",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -486,9 +523,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR8,773.20"
+         "price": "8,773.20"
         },
         {
+         "id": 38,
          "departureTime": "23:00",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -499,9 +537,10 @@
          "arrivalDate": "4 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR9,550.63"
+         "price": "9,550.63"
         },
         {
+         "id": 39,
          "departureTime": "14:05",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -512,9 +551,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air India",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR9,255.63"
+         "price": "9,255.63"
         },
         {
+         "id": 40,
          "departureTime": "17:25",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -525,9 +565,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Go First",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR9,355.38"
+         "price": "9,355.38"
         },
         {
+         "id": 41,
          "departureTime": "14:25",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -538,9 +579,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Vistara",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR9,963.75"
+         "price": "9,963.75"
         },
         {
+         "id": 42,
          "departureTime": "08:05",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -551,9 +593,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR12,227.01"
+         "price": "12,227.01"
         },
         {
+         "id": 43,
          "departureTime": "16:30",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -564,9 +607,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR12,227.01"
+         "price": "12,227.01"
         },
         {
+         "id": 44,
          "departureTime": "17:20",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -577,9 +621,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR9,264.49"
+         "price": "9,264.49"
         },
         {
+         "id": 45,
          "departureTime": "18:55",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -590,9 +635,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR8,357.62"
+         "price": "8,357.62"
         },
         {
+         "id": 46,
          "departureTime": "15:25",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -603,9 +649,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR7,998.21"
+         "price": "7,998.21"
         },
         {
+         "id": 47,
          "departureTime": "19:15",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -616,9 +663,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR7,998.21"
+         "price": "7,998.21"
         },
         {
+         "id": 48,
          "departureTime": "22:05",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -629,9 +677,10 @@
          "arrivalDate": "4 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR7,998.21"
+         "price": "7,998.21"
         },
         {
+         "id": 49,
          "departureTime": "20:55",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -642,9 +691,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR8,773.20"
+         "price": "8,773.20"
         },
         {
+         "id": 50,
          "departureTime": "21:55",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -655,9 +705,10 @@
          "arrivalDate": "4 Apr",
          "airline": "Vistara",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR8,291.05"
+         "price": "8,291.05"
         },
         {
+         "id": 51,
          "departureTime": "13:05",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -668,9 +719,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR8,773.20"
+         "price": "8,773.20"
         },
         {
+         "id": 52,
          "departureTime": "13:55",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -681,9 +733,10 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR8,773.20"
+         "price": "8,773.20"
         },
         {
+         "id": 53,
          "departureTime": "23:00",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -694,9 +747,10 @@
          "arrivalDate": "4 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR9,550.63"
+         "price": "9,550.63"
         },
         {
+         "id": 54,
          "departureTime": "14:05",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -707,9 +761,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air India",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR9,255.63"
+         "price": "9,255.63"
         },
         {
+         "id": 55,
          "departureTime": "17:25",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -720,9 +775,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Go First",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR9,355.38"
+         "price": "9,355.38"
         },
         {
+         "id": 56,
          "departureTime": "14:25",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -733,9 +789,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Vistara",
          "amenities": "personal item, cabin bag, checked bag",
-         "price": "INR9,963.75"
+         "price": "9,963.75"
         },
         {
+         "id": 57,
          "departureTime": "08:05",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -746,9 +803,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR12,227.01"
+         "price": "12,227.01"
         },
         {
+         "id": 58,
          "departureTime": "16:30",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -759,9 +817,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR12,227.01"
+         "price": "12,227.01"
         },
         {
+         "id": 59,
          "departureTime": "17:20",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -772,9 +831,10 @@
          "arrivalDate": "3 Apr",
          "airline": "Air Asia India",
          "amenities": "personal item, checked bag",
-         "price": "INR9,264.49"
+         "price": "9,264.49"
         },
         {
+         "id": 60,
          "departureTime": "18:55",
          "from": "GOI",
          "departureDate": "3 Apr",
@@ -785,7 +845,7 @@
          "arrivalDate": "3 Apr",
          "airline": "IndiGo",
          "amenities": "cabin bag, checked bag",
-         "price": "INR8,357.62"
+         "price": "8,357.62"
         }
        ]
 }
