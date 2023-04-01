@@ -17,7 +17,7 @@ export default function AllRoutes() {
       <Route path="/login" element={<Login/>} />
       <Route path="/payment" element={<Payment/>} />
       <Route path="*" element={<PageNotFound/>} />
-      <Route path="/reservation" element={<Reservation/>} />
+      <Route path="/reservation" element={<Reservation />}/>
       <Route path="/working" element={<UnderConstruction/>} />
     </Routes>
 
