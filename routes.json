@@ -1,0 +1,3 @@
+{
+    "/flights/:from": "/flights?from=:from"
+  }

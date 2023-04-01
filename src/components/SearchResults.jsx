@@ -55,7 +55,7 @@ function SearchResults({ flightlist, searchData }) {
     
     setFilteredlist(filteredData)
 
-    console.log(filteredlist[0].price)
+    // console.log(filteredlist[0].price)
     const cheapestData=filteredlist.sort((a,b)=>Number(a.price)-Number(b.price))
     console.log("cheapestData")
     console.log(cheapestData)
@@ -158,13 +158,13 @@ setFastestlist(fastestData)
 
                         <TabPanels>
                             <TabPanel>
-                                <FlightList filteredlist={filteredlist}/>
+                                <FlightList filteredlist={filteredlist} searchData={searchData}/>
                             </TabPanel>
                             <TabPanel>
-                                <FlightList filteredlist={cheapestlist}/>
+                                <FlightList filteredlist={cheapestlist} searchData={searchData}/>
                             </TabPanel>
                             <TabPanel>
-                                <FlightList filteredlist={fastestlist}/>
+                                <FlightList filteredlist={fastestlist} searchData={searchData}/>
                             </TabPanel>
                         </TabPanels>
                     </Tabs>
