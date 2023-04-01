@@ -1,6 +1,7 @@
 import { BsQuestionCircle } from 'react-icons/bs';
 import logo from "../images/RESERVE NOW CROPPED.png";
 import { Box, Text, Button } from "@chakra-ui/react";
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -9,7 +10,7 @@ function Header() {
       <Box bg='#003b95' w='100%' color='white'>
         <Box margin={"auto"} display={"Flex"} padding="20px 200px" justifyContent={"space-between"} height="80px">
           <Box flex='3'>
-            <img src={logo} alt="Reserve Now" style={{ height: "50px" }} />
+            <Link to="/"><img src={logo} alt="Reserve Now" style={{ height: "50px" }} /></Link>
           </Box>
           <Box flex='1' display={"Flex"} justifyContent={"space-between"} alignItems={"center"}>
             <Text fontSize='xl'>En</Text>

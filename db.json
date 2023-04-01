@@ -847,5 +847,12 @@
          "amenities": "cabin bag, checked bag",
          "price": 5609.28
         }
+       ],
+       "bookings":[
+        {
+            "id":1,
+            "email":"admin@mail.com",
+            "number":"9876543210"
+        }
        ]
 }
