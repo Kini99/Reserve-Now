@@ -46,6 +46,11 @@ const reducer = (state, action) => {
         ...state,
         departDate: action.payload,
       };
+      case "EXCHANGE":
+        return {
+          ...state,
+          
+        }
     default:
       throw new Error("Invalid Dispatch Type");
   }
@@ -82,6 +87,15 @@ function Search({handleSearchSubmit}) {
   const handleChildIncrease = () => {
     dispatch({ type: "CHILD_COUNT", payload: state.children + 1 });
   };
+
+  const handleExchange=()=>{
+    let tempTo=state.from;
+    let tempFrom=state.to;
+    dispatch({ type: "FROM", payload: tempFrom })
+    dispatch({ type: "TO", payload: tempTo })
+    setLoading(true);
+    handleSearchSubmit(state);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -157,7 +171,7 @@ function Search({handleSearchSubmit}) {
               />
               <Input type='text' placeholder='Where From?' value={state.from} onChange={(e) => dispatch({ type: "FROM", payload: e.target.value })} required/>
             </InputGroup>
-            <button style={{ backgroundColor: "white", margin: "5px", padding: "5px" }}><TbArrowsExchange size="25px" /></button>
+            <button style={{ backgroundColor: "white", margin: "5px", padding: "5px" }} onClick={handleExchange}><TbArrowsExchange size="25px" /></button>
             <InputGroup backgroundColor="white" margin="10px" width="4000px" style={{ borderRadius: "5px" }}>
               <InputLeftElement
                 pointerEvents='none'

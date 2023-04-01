@@ -13,32 +13,37 @@ import FlightList from "./FlightList";
 import { useLocation } from 'react-router-dom';
 import { useState } from "react";
 import { useEffect } from "react";
+import Loading from "./Loading";
 
 
 
-function SearchResults({ flightlist, searchData }) {
+function SearchResults({ flightlist, searchData, isLoading, handleSearchSubmit }) {
 
     const [filteredlist, setFilteredlist] = useState([]);
     const [cheapestlist, setCheapestlist] = useState([]);
     const [fastestlist, setFastestlist] = useState([]);
 
 
-  let trailFrom = "";
-  if (searchData.from == "Delhi") {
-    trailFrom = "DEL";
-  } else if (searchData.from == "Goa") {
-    trailFrom = "GOI";
-  }
+//   let trailFrom = "";
+//   if (searchData.from == "Delhi") {
+//     trailFrom = "DEL";
+//   } else if (searchData.from == "Goa") {
+//     trailFrom = "GOI";
+//   }else if (searchData.from == "Mumbai") {
+//     trailFrom = "BOM";
+//   }
 
-  let trailTo = "";
-  if (searchData.to == "Delhi") {
-    trailTo = "DEL";
-  } else if (searchData.to == "Goa") {
-    trailTo = "GOI";
-  }
+//   let trailTo = "";
+//   if (searchData.to == "Delhi") {
+//     trailTo = "DEL";
+//   } else if (searchData.to == "Goa") {
+//     trailTo = "GOI";
+//   } else if (searchData.to == "Mumbai") {
+//     trailTo = "BOM";
+//   }
 
-  console.log("Flight list before UseEffect");
-  console.log(flightlist);
+//   console.log("Flight list before UseEffect");
+//   console.log(flightlist);
 
   useEffect(() => {
     if (flightlist.length === 0) {
@@ -46,33 +51,33 @@ function SearchResults({ flightlist, searchData }) {
       return;
     }
     
-    const filteredData = flightlist.filter(
-      (flight) => ((flight.from == trailFrom) && (flight.to == trailTo))
-    );
-    
-    console.log("Filtered Data");
-    console.log(filteredData);
-    
-    setFilteredlist(filteredData)
+    setFilteredlist(flightlist)
 
-    // console.log(filteredlist[0].price)
-    const cheapestData=filteredlist.sort((a,b)=>Number(a.price)-Number(b.price))
-    console.log("cheapestData")
-    console.log(cheapestData)
+  }, [flightlist, searchData.from, searchData.to, searchData, filteredlist]);
+
+
+const handleCheapest=()=>{
+    const cheapestData=flightlist.sort((a,b)=>Number(a.price)-Number(b.price))
 setCheapestlist(cheapestData) 
+}
 
-const fastestData=filteredlist.sort((a,b)=>a.totalTime-b.totalTime)
-console.log("fastestData")
-    console.log(fastestData)
+const handleBest=()=>{
+    handleSearchSubmit(searchData)
+}
+
+const handleFastest=()=>{
+    const fastestData=filteredlist.sort((a,b)=>a.totalTime-b.totalTime)
 setFastestlist(fastestData)
+}
 
-  }, [flightlist, trailFrom, trailTo]);
-
-  console.log("filtered");
-  console.log(filteredlist);
-  console.log("cheapest list");
-  console.log(cheapestlist);
-
+const handleChange=(values)=>{
+    const selectedAirlines = values.map((value) => value);
+console.log(selectedAirlines)
+    const filteredFlights = flightlist.filter((flight) =>
+    selectedAirlines.includes(flight.airline)
+  );
+  setFilteredlist(filteredFlights);
+}
 
 
     return (
@@ -134,14 +139,14 @@ setFastestlist(fastestData)
                     <div style={{ margin: "10px 0" }}><Text fontWeight="bold">
                         Airlines
                     </Text>
-                        <CheckboxGroup defaultValue={['asia', 'air', 'aliance', 'goFirst', 'indiGo', 'vistara']}>
+                        <CheckboxGroup defaultValue={['Air Asia India', 'Air India', 'Alliance Air', 'Go First', 'IndiGo', 'Vistara']} onChange={handleChange}>
                             <Stack spacing={[1, 1]} direction={['column', 'column']}>
-                                <Checkbox value='asia'>Air Asia India</Checkbox>
-                                <Checkbox value='air'>Air India</Checkbox>
-                                <Checkbox value='aliance'>Aliance Air</Checkbox>
-                                <Checkbox value='goFirst'>Go First</Checkbox>
-                                <Checkbox value='indiGo'>IndiGo</Checkbox>
-                                <Checkbox value='vistara'>Vistara</Checkbox>
+                                <Checkbox value='Air Asia India'>Air Asia India</Checkbox>
+                                <Checkbox value='Air India'>Air India</Checkbox>
+                                <Checkbox value='Alliance Air'>Alliance Air</Checkbox>
+                                <Checkbox value='Go First'>Go First</Checkbox>
+                                <Checkbox value='IndiGo'>IndiGo</Checkbox>
+                                <Checkbox value='Vistara'>Vistara</Checkbox>
                             </Stack>
                         </CheckboxGroup>
                     </div>
@@ -151,20 +156,20 @@ setFastestlist(fastestData)
                     {/* result box */}
                     <Tabs>
                         <TabList style={{ display: "flex", gap: "30%", justifyContent: "center" }}>
-                            <Tab>Best</Tab>
-                            <Tab>Cheapest</Tab>
-                            <Tab>Fastest</Tab>
+                            <Tab onClick={handleBest}>Best</Tab>
+                            <Tab onClick={handleCheapest}>Cheapest</Tab>
+                            <Tab onClick={handleFastest}>Fastest</Tab>
                         </TabList>
 
                         <TabPanels>
                             <TabPanel>
-                                <FlightList filteredlist={filteredlist} searchData={searchData}/>
+                             {isLoading?<Loading />:<FlightList filteredlist={filteredlist} searchData={searchData}/>}   
                             </TabPanel>
                             <TabPanel>
-                                <FlightList filteredlist={cheapestlist} searchData={searchData}/>
+                            {isLoading?<Loading />:<FlightList filteredlist={cheapestlist} searchData={searchData}/>}
                             </TabPanel>
                             <TabPanel>
-                                <FlightList filteredlist={fastestlist} searchData={searchData}/>
+                                {isLoading?<Loading />:<FlightList filteredlist={fastestlist} searchData={searchData}/>}
                             </TabPanel>
                         </TabPanels>
                     </Tabs>

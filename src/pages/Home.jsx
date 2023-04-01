@@ -15,22 +15,41 @@ function Home() {
   const [flightlist,setFlightlist] =useState([]);
   const [searchData,setSearchData]=useState([]);
 
-  console.log("Search Data:");
-  console.log(searchData);
 
-  useEffect(()=>{
-  fetch(`http://localhost:8080/flights`)
-  .then(res=>res.json())
-  .then(data=>setFlightlist(data))
-  .catch((error) => console.log(error))
-},[])
+//   useEffect(()=>{
+//   fetch(`https://reserve-now-server.onrender.com/flights`)
+//   .then(res=>res.json())
+//   .then(data=>setFlightlist(data))
+//   .catch((error) => console.log(error))
+// },[])
 
 
   const handleSearchSubmit = async (formData) => {
     setIsLoading(true);
     try {
       // Make API request with form data
-      // and set the result state
+      // and set the result state.
+
+      if (formData.from == "Delhi") {
+        formData.from = "DEL";
+      } else if (formData.from == "Goa") {
+        formData.from = "GOI";
+      }else if (formData.from == "Mumbai") {
+        formData.from = "BOM";
+      }
+    
+      if (formData.to == "Delhi") {
+        formData.to = "DEL";
+      } else if (formData.to == "Goa") {
+        formData.to = "GOI";
+      } else if (formData.to == "Mumbai") {
+        formData.to = "BOM";
+      }
+
+      fetch(`https://reserve-now-server.onrender.com/flights?from=${formData.from}&to=${formData.to}`)
+  .then(res=>res.json())
+  .then(data=>setFlightlist(data))
+  .catch((error) => console.log(error))
       setResult(true);
       setSearchData(formData);
     } catch (error) {
@@ -44,14 +63,14 @@ function Home() {
     <>
       <Header />
       <NavBar />
-      <Box padding="20px 200px" textAlign={"left"} backgroundColor="#f5f5f5" >
-        <Heading as="h1">Compare and book flights with ease</Heading>
+      <Box padding="20px 200px" textAlign={"left"} >
+        <Heading as="h1" >Compare and book flights with ease</Heading>
         <Text fontSize="md" margin="10px 0">Discover your next dream destination</Text>
-        <Search handleSearchSubmit={handleSearchSubmit} />
+        <Search handleSearchSubmit={handleSearchSubmit} isLoading={isLoading}/>
         {isLoading ? (
           <div>Loading...</div>
         ) : result ? (
-         <SearchResults flightlist={flightlist} searchData={searchData} />
+         <SearchResults flightlist={flightlist} searchData={searchData} isLoading={isLoading} handleSearchSubmit={handleSearchSubmit} />
         ) : (
           <HomeContent />
         )}
