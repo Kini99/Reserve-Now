@@ -6,6 +6,7 @@ import Payment from "../pages/Payment";
 import Reservation from "../pages/Reservation";
 import UnderConstruction from "../pages/UnderConstruction"
 import PrivateRoute from "./PrivateRoute";
+import Admin from "../pages/Admin";
 
 
 
@@ -18,7 +19,9 @@ export default function AllRoutes() {
       <Route path="/payment" element={<Payment/>} />
       <Route path="*" element={<PageNotFound/>} />
       <Route path="/reservation" element={<Reservation />}/>
-      <Route path="/working" element={<UnderConstruction/>} />
+      <Route path="/working" element={<UnderConstruction />} />
+      <Route path="/admin" element={<Admin />} />
+
     </Routes>
 
   )

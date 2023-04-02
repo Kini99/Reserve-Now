@@ -35,7 +35,7 @@ function PaymentDetails({ flightData, searchData, handleNextStep, handleBackStep
               <img src={require("../images/alliance.png")} alt="icon" style={{ marginRight: "20px" , height:"70%"}}/>
             )}
                         <div>
-                            <Text style={{ fontWeight: "bold" }}>{searchData.from} - {flightData.from} to {searchData.to} - {flightData.to}</Text>
+                            <Text style={{ fontWeight: "bold" }}>{flightData.from} to {flightData.to}</Text>
                             <Text>{searchData.departDate} . {flightData.departureTime} - {searchData.departDate} . {flightData.arrivalTime}</Text>
                             <Text>{searchData.type} . {flightData.totalTime} . {searchData.class}</Text>
                         </div>

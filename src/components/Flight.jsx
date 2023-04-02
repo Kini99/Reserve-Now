@@ -24,6 +24,7 @@ function Flight({flight, searchData}) {
     const navigate=useNavigate()
         // console.log('flight',flight)
     const handleBooking=(flightData)=>{  
+      window.scrollTo(0, 0);
         navigate('/reservation',{state:{flightData,searchData}});
     }
 

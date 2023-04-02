@@ -17,67 +17,75 @@ import Loading from "./Loading";
 
 
 
-function SearchResults({ flightlist, searchData, isLoading, handleSearchSubmit }) {
+function SearchResults({ flightlist, searchData, isLoading, handleSearchSubmit, handlePageChange, totalPages, currentPage }) {
 
     const [filteredlist, setFilteredlist] = useState([]);
     const [cheapestlist, setCheapestlist] = useState([]);
     const [fastestlist, setFastestlist] = useState([]);
 
 
-//   let trailFrom = "";
-//   if (searchData.from == "Delhi") {
-//     trailFrom = "DEL";
-//   } else if (searchData.from == "Goa") {
-//     trailFrom = "GOI";
-//   }else if (searchData.from == "Mumbai") {
-//     trailFrom = "BOM";
-//   }
+    //   let trailFrom = "";
+    //   if (searchData.from == "Delhi") {
+    //     trailFrom = "DEL";
+    //   } else if (searchData.from == "Goa") {
+    //     trailFrom = "GOI";
+    //   }else if (searchData.from == "Mumbai") {
+    //     trailFrom = "BOM";
+    //   }
 
-//   let trailTo = "";
-//   if (searchData.to == "Delhi") {
-//     trailTo = "DEL";
-//   } else if (searchData.to == "Goa") {
-//     trailTo = "GOI";
-//   } else if (searchData.to == "Mumbai") {
-//     trailTo = "BOM";
-//   }
+    //   let trailTo = "";
+    //   if (searchData.to == "Delhi") {
+    //     trailTo = "DEL";
+    //   } else if (searchData.to == "Goa") {
+    //     trailTo = "GOI";
+    //   } else if (searchData.to == "Mumbai") {
+    //     trailTo = "BOM";
+    //   }
 
-//   console.log("Flight list before UseEffect");
-//   console.log(flightlist);
+    //   console.log("Flight list before UseEffect");
+    //   console.log(flightlist);
 
-  useEffect(() => {
-    if (flightlist.length === 0) {
-      console.log("flightlist is empty");
-      return;
+    useEffect(() => {
+        if (flightlist.length === 0) {
+            console.log("flightlist is empty");
+            return;
+        }
+
+        setFilteredlist(flightlist)
+
+        // const filteredData = flightlist.filter(
+        //     (flight) => ((flight.from == trailFrom) && (flight.to == trailTo))
+        //   );
+
+        //   console.log(filteredData)
+
+        // setFilteredlist(filteredData)
+
+    }, [flightlist, searchData.from, searchData.to, searchData, filteredlist]);
+
+
+    const handleCheapest = () => {
+        const cheapestData = flightlist.sort((a, b) => Number(a.price) - Number(b.price))
+        setCheapestlist(cheapestData)
     }
-    
-    setFilteredlist(flightlist)
 
-  }, [flightlist, searchData.from, searchData.to, searchData, filteredlist]);
+    const handleBest = () => {
+        handleSearchSubmit(searchData)
+    }
 
+    const handleFastest = () => {
+        const fastestData = filteredlist.sort((a, b) => a.totalTime - b.totalTime)
+        setFastestlist(fastestData)
+    }
 
-const handleCheapest=()=>{
-    const cheapestData=flightlist.sort((a,b)=>Number(a.price)-Number(b.price))
-setCheapestlist(cheapestData) 
-}
-
-const handleBest=()=>{
-    handleSearchSubmit(searchData)
-}
-
-const handleFastest=()=>{
-    const fastestData=filteredlist.sort((a,b)=>a.totalTime-b.totalTime)
-setFastestlist(fastestData)
-}
-
-const handleChange=(values)=>{
-    const selectedAirlines = values.map((value) => value);
-console.log(selectedAirlines)
-    const filteredFlights = flightlist.filter((flight) =>
-    selectedAirlines.includes(flight.airline)
-  );
-  setFilteredlist(filteredFlights);
-}
+    const handleChange = (values) => {
+        const selectedAirlines = values.map((value) => value);
+        console.log(selectedAirlines)
+        const filteredFlights = flightlist.filter((flight) =>
+            selectedAirlines.includes(flight.airline)
+        );
+        setFilteredlist(filteredFlights);
+    }
 
 
     return (
@@ -163,13 +171,13 @@ console.log(selectedAirlines)
 
                         <TabPanels>
                             <TabPanel>
-                             {isLoading?<Loading />:<FlightList filteredlist={filteredlist} searchData={searchData}/>}   
+                                {isLoading ? <Loading /> : <FlightList filteredlist={filteredlist} searchData={searchData} handlePageChange={handlePageChange} totalPages={totalPages} currentPage={currentPage} />}
                             </TabPanel>
                             <TabPanel>
-                            {isLoading?<Loading />:<FlightList filteredlist={cheapestlist} searchData={searchData}/>}
+                                {isLoading ? <Loading /> : <FlightList filteredlist={cheapestlist} searchData={searchData} handlePageChange={handlePageChange} totalPages={totalPages} currentPage={currentPage} />}
                             </TabPanel>
                             <TabPanel>
-                                {isLoading?<Loading />:<FlightList filteredlist={fastestlist} searchData={searchData}/>}
+                                {isLoading ? <Loading /> : <FlightList filteredlist={fastestlist} searchData={searchData} handlePageChange={handlePageChange} totalPages={totalPages} currentPage={currentPage} />}
                             </TabPanel>
                         </TabPanels>
                     </Tabs>
