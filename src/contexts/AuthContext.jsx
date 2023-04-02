@@ -41,16 +41,24 @@ function AuthContextProvider(props) {
             alert("User not found");
           }
         })
-        .catch(error => {
-          console.log(error)
-          alert("Error retrieving user data");
-        });
+        // .catch(error => {
+        //   console.log(error)
+        //   alert("Error retrieving user data");
+        // });
         setLoading(false)
       }
 
       const handleNewUser=async(email,password)=>{
+        console.log("email and password inside new user function")
+        console.log(email)
+        console.log(password)
+        console.log(JSON.stringify({
+          email: email,
+          password: password
+        }))
         setLoading(true)
-        try {
+
+        // try {
           const response = await fetch('https://reserve-now-server.onrender.com/users', {
             method: 'POST',
             headers: {
@@ -73,10 +81,11 @@ function AuthContextProvider(props) {
           } else {
             throw new Error('Failed to create user');
           }
-        } catch (error) {
-          console.error(error);
-          alert('Failed to create user');
-        }
+        // } 
+        // catch (error) {
+        //   console.error(error);
+        //   alert('Failed to create user');
+        // }
         setLoading(false)
       }
 
