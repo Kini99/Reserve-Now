@@ -47,6 +47,7 @@ const reducer=(state,action)=>{
     }
 }
 
+
 function TravellerDetails({flightData, searchData, handleNextStep, handleBackStep, updateTravellerDetails}){
 
     const [state, dispatch] = useReducer(reducer, initState)
