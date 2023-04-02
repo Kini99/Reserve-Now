@@ -11,6 +11,7 @@ import {
   TableCaption,
   TableContainer, Input, Select
 } from "@chakra-ui/react";
+import logo from "../images/RESERVE NOW CROPPED.png";
 
 function Dashboard({ user }) {
   const [flights, setFlights] = useState([]);
@@ -49,6 +50,7 @@ function Dashboard({ user }) {
 
   return (
     <div className={classes.dashboardContainer}>
+      <img src={logo} alt="Reserve Now" style={{ height: "50px" }} />
       <div className={classes.cardContainer}>
         <div className={classes.card}>
           <p style={{ fontSize: "1.2em", fontWeight: "bolder" }}>
