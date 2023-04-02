@@ -2,8 +2,13 @@ import { BsQuestionCircle } from 'react-icons/bs';
 import logo from "../images/RESERVE NOW CROPPED.png";
 import { Box, Text, Button } from "@chakra-ui/react";
 import { Link } from 'react-router-dom';
+import { AuthContext } from "../contexts/AuthContext";
+import { useContext } from 'react';
 
 function Header() {
+
+  const {isAuth,logoutUser}=useContext(AuthContext);
+
   return (
     // to add condition based on whether logged in
     <>
@@ -15,12 +20,13 @@ function Header() {
           <Box flex='1' display={"Flex"} justifyContent={"space-between"} alignItems={"center"}>
             <Text fontSize='xl'>En</Text>
             <BsQuestionCircle size="25px" />
-            <Button colorScheme='white' variant='outline' fontSize="md" _hover={{ bg: "white", color: '#003b95', colorScheme: '#003b95', variant: 'ghost', fontWeight: "bold" }}>
+{isAuth?<><Text fontSize='xl'>Hello User!</Text><Button onClick={logoutUser} colorScheme='white' variant='outline' fontSize="md" _hover={{ bg: "white", color: '#003b95', colorScheme: '#003b95', variant: 'ghost', fontWeight: "bold" }}>Logout</Button></>:(<><Link to="/login"><Button colorScheme='white' variant='outline' fontSize="md" _hover={{ bg: "white", color: '#003b95', colorScheme: '#003b95', variant: 'ghost', fontWeight: "bold" }}>
               Register
-            </Button>
-            <Button colorScheme='white' variant='outline' fontSize="md" _hover={{ bg: "white", color: '#003b95', colorScheme: '#003b95', variant: 'ghost', fontWeight: "bold" }}>
+            </Button></Link>
+            <Link to="/login"><Button colorScheme='white' variant='outline' fontSize="md" _hover={{ bg: "white", color: '#003b95', colorScheme: '#003b95', variant: 'ghost', fontWeight: "bold" }}>
               Sign In
-            </Button>
+            </Button></Link></>)}
+            
           </Box>
         </Box>
       </Box>

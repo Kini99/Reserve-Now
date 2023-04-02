@@ -1,8 +1,114 @@
 import { Box, Text, Heading, Tabs, Tab, TabList, TabPanels, TabPanel, SimpleGrid, Button } from "@chakra-ui/react";
 import { HiOutlineInformationCircle } from "react-icons/hi";
 import Search from "../components/Search";
+import FlightCarousel from "./FlightCarousel";
 
 function HomeContent(){
+  let internationalData = [
+    {
+        imageurl: "https://q-xx.bstatic.com/xdata/images/city/square210/674773.jpg?k=f65fb36a6b12a3f09a07232ef7946deb46871c0d5a308d3e16ff127d61233f41&o=",
+        destination: "Delhi to Male City",
+        dates: "Apr 4 - Apr 11 · Round trip",
+    },
+    {
+        imageurl: "https://q-xx.bstatic.com/xdata/images/city/square210/620027.jpg?k=3e415bb694a1a0145529dad3242573d0d52364bc57bae824b5990bf9c2fabc04&o=",
+        destination:"Mumbai to Bangkok" ,
+        dates: "Apr 2 - Apr 9 · Round trip",
+    },
+    {
+        imageurl: "https://q-xx.bstatic.com/xdata/images/city/square210/619666.jpg?k=504b97635641d489438feb63780d4ae80ce8a2fd08a1fcb6183485738a87e6ad&o=",
+        destination: "Hyderabad to Singapore",
+        dates: "Apr 3 - Apr 10 · Round trip",
+    },
+    {
+        imageurl: "https://q-xx.bstatic.com/xdata/images/city/square210/619923.jpg?k=4fb13225390240a51ee5aa1d76318d03dc0de8a046ddc06e4598f17b287bdcc9&o=",
+        destination: "Banglore to Dubai",
+        dates: "Apr 4 - Apr 11 · Round trip",
+    },
+    {
+        imageurl: "https://q-xx.bstatic.com/xdata/images/city/square210/688060.jpg?k=57065d3be37fb33083964a32334c077cf3cbc52eac00202e887d8c20636514e6&o=",
+        destination: "Chennai to Kuta",
+        dates: "Apr 5 - Apr 12 · Round trip",
+    },
+    {
+        imageurl: "https://q-xx.bstatic.com/xdata/images/city/square210/613094.jpg?k=f751e035ae2c0ac97263ed7d150bae607ffa17a88c55e81cec907941d6bb078b&o=",
+        destination: "Delhi to London",
+        dates: "Apr 5 - Apr 12 · Round trip",
+    },
+    
+];
+let domesticData = [
+  {
+      imageurl: "https://q-xx.bstatic.com/xdata/images/city/square210/684533.jpg?k=efaef4796fa555481ddabf686c3fc66433b50ba69c936d6f702b1125b1d06748&o=",
+      destination: "Delhi to Bangalore",
+      dates: "Apr 7 - Apr 14 · Round trip",
+  },
+  {
+      imageurl: "https://q-xx.bstatic.com/xdata/images/city/square210/684757.jpg?k=5cd52ccbba6806c371689dab0da9678a5c1f4dcef697ea976a000f5e53ac4f18&o=",
+      destination:"Mumbai to Panaji" ,
+      dates: "Apr 2 - Apr 9 · Round trip",
+  },
+  {
+      imageurl: "https://q-xx.bstatic.com/xdata/images/city/square210/684727.jpg?k=a6fd59b0c31df52ae2a907dcf2441c7842bb56e2e68d89bffd2398024c0812d3&o=",
+      destination: "Hyderabad to Chennai",
+      dates: "Apr 3 - Apr 10 · Round trip",
+  },
+  {
+      imageurl: "https://q-xx.bstatic.com/xdata/images/city/square210/971345.jpg?k=9bf85dfa10a224e2855ca2f8ca3fcd96916a962d87cdfcc48d6d57c09bef3c65&o=",
+      destination: "Banglore to Mumbai",
+      dates: "Apr 7 - Apr 14 · Round trip",
+  },
+  {
+      imageurl: "https://q-xx.bstatic.com/xdata/images/city/square210/684569.jpg?k=a5ec6ac66c784664fb76a1f709993769fd7875bfcfdbc2c5efebb72f3782815f&o=",
+      destination: "Delhi to Cochin",
+      dates: "Apr 1 - Apr 8 · Round trip",
+  },
+  {
+      imageurl: "https://q-xx.bstatic.com/xdata/images/city/square210/684951.jpg?k=50cd4cdfdf3c1b747f69880497ec06b275c3d04cf28b6d75c4544a81fe2f24d2&o=",
+      destination: "Banglore to Hyderabad",
+      dates: "Apr 6 - Apr 13 · Round trip",
+  },
+  
+]
+
+let trendingData=[
+  {
+    imageurl:"https://q-xx.bstatic.com/xdata/images/city/square210/619923.jpg?k=4fb13225390240a51ee5aa1d76318d03dc0de8a046ddc06e4598f17b287bdcc9&o=",
+    destination:"Dubai, United Arab Emirates",
+    dates:"5 Apr - 12 Apr · Round trip"
+  },
+  {
+    imageurl:"https://q-xx.bstatic.com/xdata/images/city/square210/684757.jpg?k=5cd52ccbba6806c371689dab0da9678a5c1f4dcef697ea976a000f5e53ac4f18&o=",
+    destination:"Panaji, India",
+    dates:"3 Apr - 10 Apr · Round trip"
+  },
+  {
+    imageurl:"https://q-xx.bstatic.com/xdata/images/city/square210/684764.jpg?k=6c3c9e920a39ca4f9eddcdfaa916999ea5d2765844610dd59349f4271f7596b3&o=",
+    destination:"New Delhi, India",
+    dates:"8 Apr - 15 Apr · Round trip"
+  },
+  {
+    imageurl:"https://q-xx.bstatic.com/xdata/images/city/square210/613094.jpg?k=f751e035ae2c0ac97263ed7d150bae607ffa17a88c55e81cec907941d6bb078b&o=",
+    destination:"London, United Kingdom",
+    dates:"4 Apr - 11 Apr · Round trip"
+  },
+  {
+    imageurl:"https://q-xx.bstatic.com/xdata/images/city/square210/976782.jpg?k=35477ee3d4b1090e3c1fbe9472cee3f209c711c4787ffbbfea7ab9409257d289&o=",
+    destination:"New York, United States",
+    dates:"3 Apr - 10 Apr · Round trip"
+  },
+  {
+    imageurl:"https://q-xx.bstatic.com/xdata/images/city/square210/620027.jpg?k=3e415bb694a1a0145529dad3242573d0d52364bc57bae824b5990bf9c2fabc04&o=",
+    destination:"Bangkok, Thailand",
+    dates:"4 Apr - 11 Apr · Round trip"
+  },
+  {
+    imageurl:"https://q-xx.bstatic.com/xdata/images/city/square210/688060.jpg?k=57065d3be37fb33083964a32334c077cf3cbc52eac00202e887d8c20636514e6&o=",
+    destination:"Kuta, Indonesia",
+    dates:"7 Apr - 14 Apr · Round trip"
+  },
+]
+
     return (
         <>
        
@@ -17,15 +123,22 @@ function HomeContent(){
           <Tabs>
             <TabList>
               <Tab>Domestic</Tab>
+            </TabList>
+
+            <TabPanels>
+              <TabPanel>
+               <FlightCarousel data={domesticData}/>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
+          <Tabs>
+            <TabList>
               <Tab>International</Tab>
             </TabList>
 
             <TabPanels>
               <TabPanel>
-                <p>one!</p>
-              </TabPanel>
-              <TabPanel>
-                <p>two!</p>
+               <FlightCarousel data={internationalData}/>
               </TabPanel>
             </TabPanels>
           </Tabs>
@@ -33,6 +146,7 @@ function HomeContent(){
         <Box style={{ textAlign: "left", margin: "30px 0" }}>
           <Heading as='h3' size='lg'>Trending cities</Heading>
           <Text fontSize="md" margin="10px 0">Book flights to a destination popular with travellers from India</Text>
+          <FlightCarousel data={trendingData}/>
         </Box>
         <Box style={{ textAlign: "left", margin: "30px 0" }}>
           <Heading as='h3' size='lg'>Fly worldwide with Reserve Now</Heading>
