@@ -27,7 +27,6 @@ This site is built using React and Chakra UI for styling.
 
 ![5](https://user-images.githubusercontent.com/118278010/229357661-31b0297a-9928-49ca-9332-e22304368937.png)
 
-### Live Demo Link :-
 
 
 
