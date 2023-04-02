@@ -47,6 +47,9 @@ function Login() {
   }
 
   const newUserCheck=(email,password)=>{
+    console.log("in login ")
+    console.log(email)
+    console.log(password)
     handleNewUser(email,password);
   }
 
@@ -117,7 +120,7 @@ function Login() {
             <div>
               <label>
                 Email address
-                <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} variant='outline' placeholder='Enter Email'></Input>
+                <Input type="email" onChange={(e) => console.log(e.target.value)} variant='outline' placeholder='Enter Email'></Input>
               </label>
             </div>
             <div>
@@ -136,7 +139,6 @@ function Login() {
                              <Input
                                type="password"
                                placeholder="Enter Password"
-                               value={password} 
                                onChange={(e)=>setPassword(e.target.value)} 
                                variant='outline' 
                              ></Input>
@@ -163,7 +165,6 @@ function Login() {
                 Password
                 <Input
                   type="password"
-                  value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   variant='outline'
                 ></Input>

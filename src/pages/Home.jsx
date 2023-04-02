@@ -16,7 +16,7 @@ function Home() {
   const [searchData, setSearchData] = useState([]);
 
   const [totalPages, setTotalPages] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
 
   // useEffect(()=>{
   //   fetch(`https://reserve-now-server.onrender.com/flights`)
@@ -51,7 +51,7 @@ function Home() {
       // Make API request with form data
       // and set the result state.
 
-      fetch(`https://reserve-now-server.onrender.com/flights?from=${formData.from}&to=${formData.to}`)
+      fetch(`https://reserve-now-server.onrender.com/flights?from=${formData.from}&to=${formData.to}&_limit=8&_page=${currentPage}`)
         .then(res => res.json())
         .then(data => setFlightlist(data))
         .catch((error) => console.log(error))
